@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.5.29)  29 MAY 2019 11:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.5.29)  29 MAY 2019 15:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -373,7 +373,7 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt12.pfb>
-Output written on CV_Charlie_Street.pdf (2 pages, 121032 bytes).
+Output written on CV_Charlie_Street.pdf (2 pages, 121030 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
