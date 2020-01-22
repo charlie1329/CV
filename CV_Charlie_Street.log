@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.5.29)  29 MAY 2019 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.5.29)  22 JAN 2020 12:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -296,87 +296,83 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Warning: No \author given.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 46.
+(Font)              <14.4> on input line 49.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 46.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
+(Font)              <7> on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
 
-Overfull \hbox (3.81595pt too wide) in paragraph at lines 55--56
+Overfull \hbox (3.81595pt too wide) in paragraph at lines 64--65
 []\OT1/cmr/bx/n/10.95 Undergraduate (2014-2018) \OT1/cmr/m/n/10.95 Stud-ied MSc
 i Computer Sci-ence at the Uni-ver-sity of Birmingham. 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 64.
+(Font)              <10.95> on input line 73.
 
-Overfull \hbox (15.23859pt too wide) in paragraph at lines 65--66
+Overfull \hbox (15.23859pt too wide) in paragraph at lines 74--75
 []\OT1/cmr/m/n/10.95 Completed mod-ules in In-tel-li-gent Robotics, Ma-chine Le
 arn-ing, Neu-ral Com-pu-ta-tion, Operating
  []
 
 
-Overfull \hbox (15.65005pt too wide) in paragraph at lines 73--82
-[] 
- []
-
-
-Overfull \hbox (2.92055pt too wide) in paragraph at lines 84--89
+Overfull \hbox (15.65005pt too wide) in paragraph at lines 102--111
 [] 
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 110--117
-
+Overfull \hbox (2.92055pt too wide) in paragraph at lines 113--118
+[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--125
-
+Overfull \hbox (1.08646pt too wide) in paragraph at lines 122--123
+[]\OT1/cmr/bx/n/10.95 RoboCup (2018-Present) \OT1/cmr/m/n/10.95 I am the leader
+ of team ORIon - the Uni-ver-sity of Ox-ford's RoboCup
  []
 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 159.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.125 				\end{multicols}
-                          [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 128.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 128.
+l.159 \end{document}
+                     [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 159.
  (./CV_Charlie_Street.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 128.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 128.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 159.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 159.
 Package rerunfilecheck Info: File `CV_Charlie_Street.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 128.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 159.
  ) 
 Here is how much of TeX's memory you used:
- 4841 strings out of 493029
+ 4840 strings out of 493029
  72759 string characters out of 6136234
  166590 words of memory out of 5000000
  8362 multiletter control sequences out of 15000+600000
- 11071 words of font info for 39 fonts, out of 8000000 for 9000
+ 10903 words of font info for 38 fonts, out of 8000000 for 9000
  1149 hyphenation exceptions out of 8191
- 29i,6n,32p,629b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,6n,32p,629b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt12.pfb>
-Output written on CV_Charlie_Street.pdf (2 pages, 121030 bytes).
+Output written on CV_Charlie_Street.pdf (2 pages, 123514 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 65 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  9 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
