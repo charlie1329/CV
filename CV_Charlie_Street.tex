@@ -1,102 +1,119 @@
 \documentclass[11pt]{article}
-\usepackage[margin=65pt]{geometry}
+\usepackage{fullpage}
 \usepackage{multicol}
+\usepackage[top=1in,bottom=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
-\title{\vspace{-80pt}\underline{Charlie Street}}
-\date{}
-\hyphenation{Programme}%lets me remove hyphenation for specific words
-\hyphenation{Computer}
-\hyphenation{Programming}
-\hyphenation{Computing}
-\hyphenation{Operating}
-\hyphenation{Birmingham}
-\hyphenation{Waterloo}
-\hyphenation{IntelliJam}
-\begin{document}
-	\pagenumbering{gobble}
-	\maketitle
-	\vspace*{-60pt}
-	%\begin{flushleft}
-	%	\noindent
-	%	\large7 Cassiobury Road, Weymouth, Dorset. DT4 7JN\\                         %MAKE THIS LOOK NICER     
-	%	\large 07917601977\\
-     %     		 \large me@charliestreet.net
-	%\end{flushleft}
-	\begin{flushleft}
-	\noindent
-	\large 17 Temple Street,
-	\hfill
-	\large +44 7917601977 \\
-	\large Oxford,
-	\hfill 
-	\large \href{mailto:me@charliestreet.net}{\nolinkurl{me@charliestreet.net}} \\
-	\large Oxfordshire. 
-	\hfill
-	\large
-	\url{https://github.com/charlie1329/}\\
-	\large OX4 1JS.
-	\hfill
-	\large
-	\url{https://ori.ox.ac.uk/ori-people/charlie-street/} \\
-	\end{flushleft}
+\usepackage[normalem]{ulem}
 
-	\vspace{-10pt}
-	\begin{center}
-			\textit{\large As a highly driven individual with a strong academic record, I throw myself into any challenge I am confronted with. With extra-curricular experience working in teams, I believe I can add value to any team-based project.}
-	\end{center}
-			
-	\vspace{-30pt}
-	\hspace{-100pt}\section*{\underline{Education}}
-		\begin {itemize}
-			\item \textbf{Postgraduate (2018-2022)} Studying DPhil Engineering Science at the University of Oxford.
-				\begin{itemize}
-					\item Thesis Title: Multi-Robot Coordination under Temporal Uncertainty.
-					\item Supervised by Prof. Nick Hawes (Oxford Robotics Institute), Dr. Bruno Lacerda (Oxford Robotics Institute) \& Dr.-Ing. Manuel M{\"u}hlig (Honda Research Institute).
-					\item My research interests are:
-					    \begin{itemize}
-					        \item Multi-Robot Systems
-					        \item Planning Under Uncertainty
-					        \item Continuous-Time Planning Models
-					        \item Formal Verification
-					    \end{itemize}
-				\end{itemize}
-		
-			\item \textbf{Undergraduate (2014-2018)} Studied MSci Computer Science at the University of Birmingham.
-				\begin{itemize}
-					\item Achieved average grades of \textbf{94\%}, \textbf{95\%}, \textbf{89.5\%} and \textbf{93.3\%} in each year chronologically.
-					\item Graduated July 2018 with a First Class with Honours (overall degree average of \textbf{92\%}).
-					\item Won Best in Degree Programme 2014/15, 2015/16, 2016/17 \& 2017/18.
-					\item Won Undergraduate Distinguished Dissertation Prize 2018.
-					\item Won BCS Prize for Best in Year 2014/15.
-					\item Won IBM Team Project Prize 2015/16.
-					\item Awarded School of Computer Science Excellence Scholarship during first year.
-					\item In April $2018$ I submitted my master's dissertation titled: `IntelliJam: An Intelligent Agent for Musical Improvisation'.
-					\item Completed modules in Intelligent Robotics, Machine Learning, Neural Computation, Operating Systems, Networks, Functional Programming and Computer Security among others.
-				\end{itemize}
-			
-		\end{itemize}
-		
-        \vspace{-20pt}
-	\hspace{-100pt}\section*{\underline{Publications}}
-	\begin{itemize}
-	\item Charlie Street, Bruno Lacerda, Manuel M{\"u}hlig, and Nick Hawes. "Multi-Robot Planning Under Uncertainty with Congestion-Aware Models". In: \textit{Proc. of the $19$th International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS)}. Auckland, New Zealand, $2020$.
-	\end{itemize}
+% Publication list
+\usepackage[sorting=none, backend=bibtex, doi=false, isbn=false]{biblatex}
+\addbibresource{references.bib}
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+
+\title{\vspace{-70pt}\Huge\underline{Charlie Street}}
+\date{}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\vspace*{-60pt}
+
+% Personal Info
+\begin{flushleft}
+\noindent
+\large 17 Temple Street,
+\hfill 
+\large +44 7917601977 \\
+\large Oxford. 
+\hfill
+\large
+\large \href{mailto:me@charliestreet.net}{\url{me@charliestreet.net}} \\
+\large OX4 1JS.
+\hfill
+\large
+\url{https://ori.ox.ac.uk/people/charlie-street} \\
+\end{flushleft}
 	
-	\vspace{-20pt}
-	\hspace{-100pt}\section*{\underline{Student Supervision}}
-	\begin{itemize}
-	\item \textbf{4th Year Project Supervisor:} Han Zhou (October $2018$ - May $2019$)
-	    \begin{itemize}
-	        \item Topic: Auctioning for Multi-Robot Coordination 
-	    \end{itemize}
-	\item \textbf{4th Year Project Supervisor:} James Wheadon (October $2019$ - Present)
-	    \begin{itemize}
-	        \item Topic: Multi-Agent Path Finding in Continuous-Time
-	    \end{itemize}
-	\end{itemize}
+\section*{\uline{Research}}	
+        
+I am a DPhil student in the Goal-Oriented Autonomous Long-Lived Systems lab at the Oxford Robotics Institute, University of Oxford.
+%
+My research is focused on the robust continuous-time coordination of multi-robot systems under uncertainty.
+%
+To achieve this, I apply planning, model checking, and task allocation techniques to continuous-time models of multi-robot behaviour.\\
+
+\noindent \textbf{Research Interests}
+\begin{itemize}
+    \item Multi-Robot Planning Under Uncertainty
+    \item Formal Methods for Multi-Robot Systems
+    \item Continuous-Time and Non-Stationary Planning Models
+    \item Multi-Robot Task Allocation
+\end{itemize}
 	
-	\vspace{-20pt}
-	\hspace{-100pt}\section*{\underline{Technical Skills}}
+\section*{\uline{Education}}
+\begin {itemize}
+\item \textbf{DPhil in Engineering Science at the University of Oxford \hfill 2018-2022} 
+\begin{itemize}
+    \item Thesis: \emph{Multi-Robot Coordination Under Temporal Uncertainty}
+    \item Supervisors: Nick Hawes, Bruno Lacerda, and Manuel M{\"u}hlig
+    \item Expected Submission Date: June 2022
+\end{itemize}
+			
+\item \textbf{MSci in Computer Science at the University of Birmingham \hfill 2014-2018}
+\begin{itemize}
+\item Thesis: \emph{IntelliJam: An Intelligent Agent for Musical Improvisation}
+\item Supervisor: Peter Tino
+\item Degree Class: First Class with Honours (Average: 92\%)
+\item Awarded Undergraduate Distinguished Dissertation Prize 2018
+\item Awarded Best in Degree Programme 2014/15, 2015/16, 2016/17, and 2017/18
+\item Awarded BCS Prize for Best in Year 2014/15
+\item Awarded IBM Team Project Prize 2015/16
+\end{itemize}
+\end{itemize}
+
+\section*{\underline{Projects}}
+\begin{itemize}
+\item \textbf{Team ORIon (RoboCup Competition Team)\hfill 2019-2021}
+\begin{itemize}
+\item Deploying Service Robots in Domestic Environments
+\item Lead Team ORIon and Task-Level Planning Sub-Team
+\end{itemize}
+\item \textbf{First Fleet\hfill 2020-2021}
+\begin{itemize}
+\item Deploying Multi-Robot Fleets in Agricultural Environments
+\item Implemented Multi-Robot Planning System
+\end{itemize}
+\end{itemize}
+
+\section*{\underline{Supervision}}
+\begin{itemize}
+\item \textbf{Alex Rutherford (with Bruno Lacerda and Nick Hawes)\hfill 2021 - 2022}
+\begin{itemize}
+\item Fourth Year Project: \emph{Multi-Agent Reinforcement Learning}
+\end{itemize}
+\item \textbf{Yifeng Wei (with Bruno Lacerda) \hfill 2020 - 2021}
+\begin{itemize}
+\item Fourth Year Project: \emph{Trial-Based Search for Generalised Stochastic Petri Nets}
+\end{itemize} 
+\item \textbf{James Wheadon (with Nick Hawes) \hfill 2019 - 2020}
+\begin{itemize}
+\item  Fourth Year Project: \emph{Multi-Agent Path Finding in Continuous Time}
+\end{itemize}
+\item \textbf{Han Zhou (with Bruno Lacerda) \hfill 2018 - 2019}
+\begin{itemize}
+\item Fourth Year Project: \emph{Auctioning for Multi-Robot Coordination}
+\end{itemize}
+\end{itemize}
+	
+\section*{\underline{Outreach}}
+\begin{itemize}
+\item \textbf{Lead Robot Demonstrations at Goodwood Festival of Speed\hfill 2021}
+\item \textbf{Lead Robot Demonstration at University Open Day\hfill 2019}
+\item \textbf{Assisted with Robot Demonstration at Blenheim Palace\hfill 2019}
+\end{itemize}
+
+\iffalse
+	\section*{\underline{Technical Skills}}
 		\subsection*{\underline{Programming Languages}}
 		\renewcommand{\arraystretch}{1.3}%
 		\begin{tabular}[20pt]{ll}
@@ -115,45 +132,13 @@
 			\textbf{LaTeX} & I've produced many documents in LaTeX, notably my dissertation.\\
 			\textbf{ROS} & I've had experience working with/running robotics systems using the ROS middleware.
 		\end{tabular}
-	
-	\vspace{-10pt}
-	\hspace{-100pt}\section*{\underline{Projects}} %FINISH THIS AND CLEAN UP
-			\begin{itemize}
-			        \item \textbf{RoboCup (2018-Present)} I am the leader of team ORIon - the University of Oxford's RoboCup team. The aim is to develop a general purpose service robot for domestic tasks. My work in the team is concerned with high-level task planning. We have previously competed in the RoboCup@Home DSPL $2019$ in Sydney, where we placed $6$th, and have more competitions planned throughout $2020$. The team has also previously demonstrated for HRH Prince William. 
-				\item \textbf{IntelliJam (2017-2018)} The software created alongside my master's dissertation. IntelliJam uses Fractal Prediction Machines to allow a guitar player to play whilst connected to a computer and have an agent respond to their playing with new musical phrases in real time. In addition to the agent, a new method of melody extraction based on spectrogram filtering was devised.
-				\item \textbf{Dating Chat-Bot for `The Gadget Show' (2016)} A project for the TV show to create a bot to partake in speed-dating. The goal was for an unknowing subject to choose the bot over a human. I led the back-end/AI sub-team; I was the majority contributor to the design and implementation of the bot. This forced me to think creatively while under time-pressure.
-				\item \textbf{Simulizer (2016-2017)} A project initially undertaken for a second year module but continued since. Simulizer is a simulator and visualiser for a MIPS R3000 processor. Working in a team of 5, I was in charge of the back-end, requiring me to write a faithful simulation of the R3000 processor, including a primitive pipeline for execution. This has since been used as a significant teaching aid for the `Computer Systems \& Architecture' module at the University of Birmingham. Students had to write assignments in Simulizer; the assignments were graded using the software. 
-				\item See \textbf{\href{https://github.com/charlie1329/}{GitHub}} for more projects.
-			\end{itemize}
-        \iffalse
-	\vspace{-20pt}
-	\hspace{-100pt}\section*{\underline{Extra-Curricular Interests And Experiences}}
-			\begin{itemize}
-				\item \textbf{Music} I am an avid musician, having played the guitar since the age of 12 with interest in many musical genres. This has required great commitment and perseverance. Previously, I have been lead guitarist/backing vocalist for a rock covers band. Being an active member of a band has improved my ability to cooperate well within a group and listen to those around me. 
-				\item \textbf{Duke Of Edinburgh Award} I've completed all 3 levels of the DofE award scheme. This required large amounts of team-work and communication, particularly during expeditions, which involved working in a team of 4 for 4 days on Dartmoor. This greatly benefit my leadership skills. I also partook in voluntary work including working in a local charity shop and aiding restoration work along a canal near Gloucester.
-			\end{itemize}
-
-				
-	\vspace{-20pt}
-	\hspace{-100pt}\section*{\underline{References}}	
-				\begin{multicols}{2}
-					\noindent
-					Prof. Nick Hawes:  \href{mailto:nickh@robots.ox.ac.uk}{\nolinkurl{nickh@robots.ox.ac.uk}}\\
-					Oxford Robotics Institute,\\
-					University of Oxford,\\
-					Oxford, \\
-					Oxfordshire.\\
-					OX2 6NN.\\
-	
-					\noindent
-					Prof. Peter Tino:  \href{mailto:P.Tino@cs.bham.ac.uk}{\nolinkurl{P.Tino@cs.bham.ac.uk}}\\
-					School of Computer Science,\\
-					University of Birmingham,\\
-					Birmingham, \\
-					West Midlands.\\
-					B15 2TT.\\
-				\end{multicols}
-        \fi
+\fi
+			
+\section*{\underline{Publications}}
+\begin{itemize}
+\item[\cite{street2022context}] \fullcite{street2022context}
+\item[\cite{street2021congestion}] \fullcite{street2021congestion}	\item[\cite{street2020multi}] \fullcite{street2020multi}
+\end{itemize}
 
 
 \end{document}
