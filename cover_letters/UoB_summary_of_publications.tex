@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+
+% Publication list
+\usepackage[sorting=none, backend=bibtex, doi=false, isbn=false]{biblatex}
+\addbibresource{../references.bib}
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+
+\title{Summary of Publications}
+\date{}
+\author{Charlie Street}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\begin{enumerate}
+\item \fullcite{street2022context}.
+
+
+Formal models of a multi-robot system capture task-level behaviour abstract of low-level components such as controllers, i.e. they consider
+high-level capabilities such as navigation or manipulation, while omitting how the
+robot achieves this during execution, e.g. through motion planning.
+%
+Formal multi-robot models are fundamental to planning, simulation, and model checking techniques.
+%
+However, existing models are invalidated by strong assumptions that fail to capture execution-time multi-robot behaviour and reduce the predictive power of our models, such as simplistic duration models or synchronisation constraints.
+%
+In this paper we proposed a novel multi-robot Markov automaton (MA) formulation which models asynchronous multi-robot execution in continuous time.
+%
+MA extend Markov decision processes (MDPs) by separating instantaneous decision making from continuous action execution.
+%
+This allows us to expand on the limited forms of uncertainty that can be represented by an MDP to capture temporal uncertainty.
+%
+In our MA formulation, robot dynamics are captured using phase-type distributions over action durations, where distributions are fit from data collected in a more realistic representation of the environment.
+%
+For navigation actions, these distributions capture the temporal dynamics of the controller and motion planner.
+%
+Moreover, to capture multi-robot behaviour, we define the notion of \emph{contexts} to describe the spatiotemporal situation actions are executed in, and fit an action duration distribution for each context.
+%
+Contexts allow us to capture the dynamics of the robots and environment, and how they affect robot action execution.
+%
+For example, contexts can describe the presence of humans in a museum, which affect a tour guide's navigation performance.
+%
+Alternatively, contexts can describe the time of day, which affect the presence of humans or objects in a domestic environment, which affects robot vacuum performance. 
+%
+Empirically, we have demonstrated that our Markov automata formulation is able to accurately capture the task-level behaviour of a multi-robot system simulated in Gazebo.
+%
+Further, we also presented a scalable discrete-event simulator which yields realistic statistics over execution-time robot behaviour by sampling through the Markov automaton given a set of robot policies.
+%
+This simulator avoids the computational overhead of physics-based simulators such as Gazebo, which capturing task-level multi-robot behaviour.
+%
+This simulator could be used within CONVINCE to verify robot behaviour through statistical model checking, or for rapid contingency planning in the case of failure.
+
+\item \fullcite{street2020multi}.
+
+When planning for multi-robot navigation tasks under uncertainty, plans should prevent robots from colliding while still reaching their goal. 
+%
+Solutions achieving this fall on a spectrum. 
+%
+At one end are solutions which prevent robots from being in the same part of the environment simultaneously at planning time, ignoring the robots' capabilities to manoeuvre around each other, whilst at the other end are solutions that solve the problem at execution time, relying solely on online conflict resolution. 
+%
+Both approaches can lead to inefficient behaviour. 
+%
+In this paper, we present a novel framework in the middle of this spectrum that explicitly reasons over the effect the presence of multiple robots has on navigation performance. 
+%
+We refer to this effect as \emph{congestion}. 
+%
+We present a structure, called the \emph{probabilistic reservation table}, which summarises the plans of robots, allowing us to probabilistically model congestion.
+%
+We show how this structure can be used for planning by proposing an approach that, for each robot, sequentially builds and solves a Markov decision process where the transition probabilities are obtained by querying the probabilistic reservation table.
+%
+We carry out experiments on synthetic data and in simulation to show the effectiveness of our framework.
+
+\item \fullcite{street2021congestion}.
+
+Multi-robot systems must be able to maintain performance when robots get delayed during execution.
+%
+For mobile robots, one source of delays is \emph{congestion}.
+%
+Congestion occurs when robots deployed in shared physical spaces interact, as robots present in the same area simultaneously must manoeuvre to avoid each other.
+%
+Congestion can adversely affect navigation performance, and increase the duration of navigation actions.
+%
+In this paper, we present a multi-robot planning framework which utilises learnt probabilistic models of how congestion affects navigation duration. 
+%
+Central to our framework is a \emph{probabilistic reservation table} which summarises robot plans, capturing the effects of congestion.
+%
+To plan, we solve a sequence of single-robot \emph{time-varying Markov automata}, where transition probabilities and rates are obtained from the probabilistic reservation table.
+% 
+We also present an iterative model refinement procedure for accurately predicting execution-time robot performance.
+% 
+We evaluate our framework with extensive experiments on synthetic data and simulated robot behaviour.
+
+\end{enumerate}
+
+\end{document}
