@@ -17,39 +17,28 @@
 \item \fullcite{street2022context}.
 
 
-Formal models of a multi-robot system capture task-level behaviour abstract of low-level components such as controllers, i.e. they consider
-high-level capabilities such as navigation or manipulation, while omitting how the
-robot achieves this during execution, e.g. through motion planning.
+Formal task-level models of multi-robot behaviour are fundamental to planning, simulation, and model checking techniques.
 %
-Formal multi-robot models are fundamental to planning, simulation, and model checking techniques.
+However, existing multi-robot models such as multi-agent Markov decision processes (MDPs) are invalidated by strong assumptions which fail to capture execution-time behaviour and limit their predictive power, such as simplistic duration models or synchronisation constraints.
 %
-However, existing models are invalidated by strong assumptions that fail to capture execution-time multi-robot behaviour and reduce the predictive power of our models, such as simplistic duration models or synchronisation constraints.
+In this paper we propose a novel \emph{multi-robot Markov automaton} (MA) formulation which models asynchronous multi-robot execution in continuous time.
 %
-In this paper we proposed a novel multi-robot Markov automaton (MA) formulation which models asynchronous multi-robot execution in continuous time.
+MA extend MDPs by separating instantaneous decision making from stochastic action durations.
 %
-MA extend Markov decision processes (MDPs) by separating instantaneous decision making from continuous action execution.
+We capture robot dynamics, i.e. the behaviour of the controller and motion planner, using \emph{phase-type distributions} (PTDs) over action durations.
 %
-This allows us to expand on the limited forms of uncertainty that can be represented by an MDP to capture temporal uncertainty.
+Further, the duration and outcome of robot actions is dependent on the precise spatiotemporal situation in which they are executed, which we refer to as the \emph{context}.
 %
-In our MA formulation, robot dynamics are captured using phase-type distributions over action durations, where distributions are fit from data collected in a more realistic representation of the environment.
+Contexts allow us to model the effects of environmental dynamics and robot interactions on robot action execution, where we fit a PTD for each context an action is executed in.
 %
-For navigation actions, these distributions capture the temporal dynamics of the controller and motion planner.
+Within CONVINCE, contexts can capture human presence within a museum, which affects a robotic guide's navigation performance, or the state of a living room a robotic vacuum cleaner is operating in.
 %
-Moreover, to capture multi-robot behaviour, we define the notion of \emph{contexts} to describe the spatiotemporal situation actions are executed in, and fit an action duration distribution for each context.
+We also present a scalable discrete-event simulator which yields realistic statistics over execution-time robot behaviour by sampling through the multi-robot MA.
+% TODO: Add avoiding computational overhead in somewhere?
 %
-Contexts allow us to capture the dynamics of the robots and environment, and how they affect robot action execution.
+Within CONVINCE, our simulator could be used alongside statistical model checking techniques to verify robot behaviour, or to rapidly evaluate contingency plans during execution.
 %
-For example, contexts can describe the presence of humans in a museum, which affect a tour guide's navigation performance.
-%
-Alternatively, contexts can describe the time of day, which affect the presence of humans or objects in a domestic environment, which affects robot vacuum performance. 
-%
-Empirically, we have demonstrated that our Markov automata formulation is able to accurately capture the task-level behaviour of a multi-robot system simulated in Gazebo.
-%
-Further, we also presented a scalable discrete-event simulator which yields realistic statistics over execution-time robot behaviour by sampling through the Markov automaton given a set of robot policies.
-%
-This simulator avoids the computational overhead of physics-based simulators such as Gazebo, which capturing task-level multi-robot behaviour.
-%
-This simulator could be used within CONVINCE to verify robot behaviour through statistical model checking, or for rapid contingency planning in the case of failure.
+Empirically, we demonstrate that our MA formulation can accurately predict the task-level behaviour of a multi-robot system simulated in Gazebo.
 
 \item \fullcite{street2020multi}.
 
