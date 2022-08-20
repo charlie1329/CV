@@ -14,7 +14,7 @@
 \maketitle
 \thispagestyle{empty}
 \begin{enumerate}
-\item \fullcite{street2022context}.
+\item[\cite{street2022context}] \fullcite{street2022context}.
 
 
 Formal task-level models of multi-robot behaviour are fundamental to planning, simulation, and model checking techniques.
@@ -40,7 +40,7 @@ Within CONVINCE, our simulator could be used alongside statistical model checkin
 %
 Empirically, we demonstrate that our MA formulation can accurately predict the task-level behaviour of a multi-robot system simulated in Gazebo.
 
-\item \fullcite{street2020multi}.
+\item[\cite{street2020multi}] \fullcite{street2020multi}.
 
 Multi-robot systems must be able to maintain performance when robots get delayed during execution.
 %
@@ -62,18 +62,15 @@ To plan, we solve a sequence of single-robot MDPs, where transition probabilitie
 %
 Though we focus on congestion, by considering learnt PTDs during planning we synthesise multi-robot behaviour that is robust to previously observed, but not explicitly modelled, sources of delay.
 %
-We demonstrate the scalability and performance of our framework with experiments on synthetic data and simulated robot behaviour.
+Empirically, we demonstrate that our framework effectively distributes robots across the environment to reduce congestion in a scalable way.
 %
-This planning framework could be applied directly to the CONVINCE use cases.
+The congestion-aware framework is directly applicable to the CONVINCE use cases.
 %
-For example, we can model the continuous-time behaviour of museum visitors in the PRT, similar to robots.
+For a robotic tour guide, we can model the continuous-time behaviour of museum visitors in the PRT, and reason over human congestion during planning to take efficient routes through the museum.
 %
-A robotic tour guide can then reason over the human congestion during planning, and plan to take routes which trade off between exhibits visited and travel time.
-%
-Moreover, for dual-arm assembly robots, each arm can reason over the effect the other arm has on its picking and placing actions.
+For dual-arm assembly robots, each arm can reason over where the other is likely to be and act to avoid collisions or delays, which may occur if both arms try to place an object in the same place simultaneously.
 
-
-\item \fullcite{street2021congestion}.
+\item[\cite{street2021congestion}] \fullcite{street2021congestion}.
 
 Multi-robot systems must be able to maintain performance when robots get delayed during execution.
 %
