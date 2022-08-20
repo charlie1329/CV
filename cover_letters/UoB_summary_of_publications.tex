@@ -42,23 +42,36 @@ Empirically, we demonstrate that our MA formulation can accurately predict the t
 
 \item \fullcite{street2020multi}.
 
-When planning for multi-robot navigation tasks under uncertainty, plans should prevent robots from colliding while still reaching their goal. 
+Multi-robot systems must be able to maintain performance when robots get delayed during execution.
 %
-Solutions achieving this fall on a spectrum. 
+For mobile robots, one source of delays is \emph{congestion}.
 %
-At one end are solutions which prevent robots from being in the same part of the environment simultaneously at planning time, ignoring the robots' capabilities to manoeuvre around each other, whilst at the other end are solutions that solve the problem at execution time, relying solely on online conflict resolution. 
+Congestion occurs when robots deployed in shared physical spaces interact, as robots present in the same area simultaneously must manoeuvre to avoid each other.
 %
-Both approaches can lead to inefficient behaviour. 
+Congestion can adversely affect navigation performance, and increase the duration of navigation actions.
 %
-In this paper, we present a novel framework in the middle of this spectrum that explicitly reasons over the effect the presence of multiple robots has on navigation performance. 
+In this paper, we present a multi-robot planning framework which utilises learnt probabilistic models of how congestion affects navigation duration. 
 %
-We refer to this effect as \emph{congestion}. 
+These duration models are realised as PTDs for each action and congestion level, similar to the multi-robot MA discussed above.
 %
-We present a structure, called the \emph{probabilistic reservation table}, which summarises the plans of robots, allowing us to probabilistically model congestion.
+This allows us to capture the behaviour profile of the robot's motion planner under different levels of congestion.
 %
-We show how this structure can be used for planning by proposing an approach that, for each robot, sequentially builds and solves a Markov decision process where the transition probabilities are obtained by querying the probabilistic reservation table.
+Central to our framework is a \emph{probabilistic reservation table} (PRT) which summarises robot policies as continuous-time Markov chains (CTMCs), capturing the effects of congestion.
 %
-We carry out experiments on synthetic data and in simulation to show the effectiveness of our framework.
+To plan, we solve a sequence of single-robot MDPs, where transition probabilities and rates are obtained from the probabilistic reservation table using CTMC model checking techniques.
+%
+Though we focus on congestion, by considering learnt PTDs during planning we synthesise multi-robot behaviour that is robust to previously observed, but not explicitly modelled, sources of delay.
+%
+We demonstrate the scalability and performance of our framework with experiments on synthetic data and simulated robot behaviour.
+%
+This planning framework could be applied directly to the CONVINCE use cases.
+%
+For example, we can model the continuous-time behaviour of museum visitors in the PRT, similar to robots.
+%
+A robotic tour guide can then reason over the human congestion during planning, and plan to take routes which trade off between exhibits visited and travel time.
+%
+Moreover, for dual-arm assembly robots, each arm can reason over the effect the other arm has on its picking and placing actions.
+
 
 \item \fullcite{street2021congestion}.
 
