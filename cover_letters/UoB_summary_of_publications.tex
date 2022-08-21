@@ -50,45 +50,52 @@ Congestion occurs when robots deployed in shared physical spaces interact, as ro
 %
 Congestion can adversely affect navigation performance, and increase the duration of navigation actions.
 %
-In this paper, we present a multi-robot planning framework which utilises learnt probabilistic models of how congestion affects navigation duration. 
+In this paper, we present a multi-robot planning framework which utilises learnt probabilistic models of how congestion affects navigation duration.
 %
-These duration models are realised as PTDs for each action and congestion level, similar to the multi-robot MA discussed above.
+We represent these duration models as PTDs, similar to the multi-robot MA described above.
 %
-This allows us to capture the behaviour profile of the robot's motion planner under different levels of congestion.
-%
-Central to our framework is a \emph{probabilistic reservation table} (PRT) which summarises robot policies as continuous-time Markov chains (CTMCs), capturing the effects of congestion.
+Central to our framework is a \emph{probabilistic reservation table} (PRT), which captures the effects of congestion by summarising robot policies as continuous-time Markov chains (CTMCs).
 %
 To plan, we solve a sequence of single-robot MDPs, where transition probabilities and rates are obtained from the probabilistic reservation table using CTMC model checking techniques.
 %
-Though we focus on congestion, by considering learnt PTDs during planning we synthesise multi-robot behaviour that is robust to previously observed, but not explicitly modelled, sources of delay.
+Though we focus on congestion, by reasoning over learnt duration models during planning we synthesise multi-robot behaviour that is robust to previously observed, but not explicitly modelled, sources of delay.
 %
 Empirically, we demonstrate that our framework effectively distributes robots across the environment to reduce congestion in a scalable way.
 %
-The congestion-aware framework is directly applicable to the CONVINCE use cases.
+Our congestion-aware planning framework is directly applicable to the CONVINCE use cases.
 %
 For a robotic tour guide, we can model the continuous-time behaviour of museum visitors in the PRT, and reason over human congestion during planning to take efficient routes through the museum.
 %
-For dual-arm assembly robots, each arm can reason over where the other is likely to be and act to avoid collisions or delays, which may occur if both arms try to place an object in the same place simultaneously.
+For dual-arm assembly robots, each arm can reason over where the other is likely to be to avoid collisions or delays, which occur when both arms try to place an object in the same place simultaneously.
 
 \item[\cite{street2021congestion}] \fullcite{street2021congestion}.
 
-Multi-robot systems must be able to maintain performance when robots get delayed during execution.
+This paper extends the congestion-aware planning framework in~\cite{street2020multi}.
 %
-For mobile robots, one source of delays is \emph{congestion}.
+We introduce \emph{time-varying Markov automata} (TVMA), a novel formalism for continuous-time planning problems under-time varying dynamics.
 %
-Congestion occurs when robots deployed in shared physical spaces interact, as robots present in the same area simultaneously must manoeuvre to avoid each other.
+TVMAs extend MAs to use time-varying transition functions, which allows us to capture dynamic sources of uncertainty.
 %
-Congestion can adversely affect navigation performance, and increase the duration of navigation actions.
+For example, a robotic vacuum cleaner is less likely to succeed in cleaning a room during times when people are often present.
 %
-In this paper, we present a multi-robot planning framework which utilises learnt probabilistic models of how congestion affects navigation duration. 
-%
-Central to our framework is a \emph{probabilistic reservation table} which summarises robot plans, capturing the effects of congestion.
-%
-To plan, we solve a sequence of single-robot \emph{time-varying Markov automata}, where transition probabilities and rates are obtained from the probabilistic reservation table.
+In this paper, we use TVMA to model the single-robot planning problem under congestion.
 % 
-We also present an iterative model refinement procedure for accurately predicting execution-time robot performance.
-% 
-We evaluate our framework with extensive experiments on synthetic data and simulated robot behaviour.
+Further, we present an approximate TVMA solution method which extends labelled real-time dynamic programming to incrementally build and solve an MDP abstraction of the TVMA.
+%
+The MDP abstraction uses discretisations of the PTDs for each congestion level.
+%
+As well as synthesising robot behaviour, we also wish to accurately predict the performance of the multi-robot system at execution time.
+%
+For example, we may wish to know the probability that a robot will arrive at its goal within a given time.
+%
+To predict performance, we require accurate models of robot policy
+execution under congestion.
+%
+Therefore, we present an iterative procedure that refines single-robot CTMCs stored in the PRT to accurately capture the effects of the other robots. 
+%
+We then predict execution-time robot performance by using formal verification techniques to obtain probabilistic guarantees on the refined CTMCs.
+%
+Within CONVINCE, these techniques could be used to identify sources of failure prior to or during execution, and trigger replanning or plan refinement.
 
 \end{enumerate}
 
