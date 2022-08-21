@@ -6,9 +6,10 @@
 \addbibresource{../references.bib}
 \preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
 
-\title{Summary of Publications}
+\title{\vspace{-30pt}Summary of Publications}
 \date{}
 \author{Charlie Street}
+\pagenumbering{gobble}
 
 \begin{document}
 \maketitle
@@ -66,36 +67,39 @@ Our congestion-aware planning framework is directly applicable to the CONVINCE u
 %
 For a robotic tour guide, we can model the continuous-time behaviour of museum visitors in the PRT, and reason over human congestion during planning to take efficient routes through the museum.
 %
-For dual-arm assembly robots, each arm can reason over where the other is likely to be to avoid collisions or delays, which occur when both arms try to place an object in the same place simultaneously.
+For dual-arm assembly robots, each arm can reason over where the other is likely to be to avoid collisions or delays, which occur when both arms try to place an object in the same place simultaneously.\looseness=-1
 
 \item[\cite{street2021congestion}] \fullcite{street2021congestion}.
 
 This paper extends the congestion-aware planning framework in~\cite{street2020multi}.
 %
-We introduce \emph{time-varying Markov automata} (TVMA), a novel formalism for continuous-time planning problems under-time varying dynamics.
+We introduce \emph{time-varying Markov automata} (TVMA), a novel formalism for continuous-time planning problems under time-varying dynamics.
 %
-TVMAs extend MAs to use time-varying transition functions, which allows us to capture dynamic sources of uncertainty.
+We use TVMAs to model the single-robot planning problem under congestion, which we solve sequentially for each robot as in~\cite{street2020multi}.
 %
-For example, a robotic vacuum cleaner is less likely to succeed in cleaning a room during times when people are often present.
-%
-In this paper, we use TVMA to model the single-robot planning problem under congestion.
+TVMAs could be used in CONVINCE to model how a robotic vacuum cleaner is less likely to clean successfully during times of the day when people are often present, for example.
 % 
-Further, we present an approximate TVMA solution method which extends labelled real-time dynamic programming to incrementally build and solve an MDP abstraction of the TVMA.
+We also present an approximate TVMA solution method which extends labelled real-time dynamic programming to incrementally build and solve an MDP abstraction of the TVMA.
 %
-The MDP abstraction uses discretisations of the PTDs for each congestion level.
+To build this abstraction, we discretise continuous duration distributions and include time in the MDP state.
 %
-As well as synthesising robot behaviour, we also wish to accurately predict the performance of the multi-robot system at execution time.
-%
-For example, we may wish to know the probability that a robot will arrive at its goal within a given time.
+As well as synthesising robot behaviour, we also wish to accurately predict the execution-time performance of the multi-robot system.
 %
 To predict performance, we require accurate models of robot policy
 execution under congestion.
 %
-Therefore, we present an iterative procedure that refines single-robot CTMCs stored in the PRT to accurately capture the effects of the other robots. 
+After planning, the PRT stores a CTMC for each robot that describes the continuous-time behaviour induced by their policy.
+%
+However, due to the sequential nature of our planning framework, these CTMCs contain inaccurate congestion information.
+%
+Therefore, we present an iterative procedure that refines the single-robot CTMCs stored in the PRT to accurately capture the effects of the other robots. 
 %
 We then predict execution-time robot performance by using formal verification techniques to obtain probabilistic guarantees on the refined CTMCs.
 %
-Within CONVINCE, these techniques could be used to identify sources of failure prior to or during execution, and trigger replanning or plan refinement.
+These techniques could be used in CONVINCE to identify unexpected robot failures or delays during execution, and trigger replanning when necessary.
+%
+Alternatively, by predicting robot behaviour prior to execution, we can identify when and where contingency plans are likely to be required.
+
 
 \end{enumerate}
 
