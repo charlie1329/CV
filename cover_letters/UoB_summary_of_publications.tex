@@ -6,7 +6,7 @@
 \addbibresource{../references.bib}
 \preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
 
-\title{\vspace{-30pt}Summary of Publications}
+\title{\vspace{-60pt}Summary of Publications}
 \date{}
 \author{Charlie Street}
 \pagenumbering{gobble}
@@ -32,7 +32,7 @@ Further, the duration and outcome of robot actions is dependent on the precise s
 %
 Contexts allow us to model the effects of environmental dynamics and robot interactions on robot action execution, where we fit a PTD for each context an action is executed in.
 %
-Within CONVINCE, contexts can capture human presence within a museum, which affects a robotic guide's navigation performance, or the state of a living room a robotic vacuum cleaner is operating in.
+Within CONVINCE, contexts can capture human presence within a museum, which affects a robotic tour guide's navigation performance, or the state of a living room a robotic vacuum cleaner is operating in.
 %
 We also present a scalable discrete-event simulator which yields realistic statistics over execution-time robot behaviour by sampling through the multi-robot MA.
 % TODO: Add avoiding computational overhead in somewhere?
@@ -45,7 +45,7 @@ Empirically, we demonstrate that our MA formulation can accurately predict the t
 
 Multi-robot systems must be able to maintain performance when robots get delayed during execution.
 %
-For mobile robots, one source of delays is \emph{congestion}.
+For mobile robots, one source of delays is congestion.
 %
 Congestion occurs when robots deployed in shared physical spaces interact, as robots present in the same area simultaneously must manoeuvre to avoid each other.
 %
@@ -55,7 +55,7 @@ In this paper, we present a multi-robot planning framework which utilises learnt
 %
 We represent these duration models as PTDs, similar to the multi-robot MA described above.
 %
-Central to our framework is a \emph{probabilistic reservation table} (PRT), which captures the effects of congestion by summarising robot policies as continuous-time Markov chains (CTMCs).
+Central to our framework is a \emph{probabilistic reservation table} (PRT), which captures the effects of congestion by summarising robot policies as \emph{continuous-time Markov chains} (CTMCs).
 %
 To plan, we solve a sequence of single-robot MDPs, where transition probabilities and rates are obtained from the probabilistic reservation table using CTMC model checking techniques.
 %
@@ -78,15 +78,16 @@ We introduce \emph{time-varying Markov automata} (TVMA), a novel formalism for c
 We use TVMAs to model the single-robot planning problem under congestion, which we solve sequentially for each robot as in~\cite{street2020multi}.
 %
 TVMAs could be used in CONVINCE to model how a robotic vacuum cleaner is less likely to clean successfully during times of the day when people are often present, for example.
-% 
-We also present an approximate TVMA solution method which extends labelled real-time dynamic programming to incrementally build and solve an MDP abstraction of the TVMA.
+%
+By solving the TVMA, the vacuum cleaner would then plan to clean when rooms are likely to be empty.
+%
+We present an approximate TVMA solution method which extends labelled real-time dynamic programming to incrementally build and solve an MDP abstraction of the TVMA.
 %
 To build this abstraction, we discretise continuous duration distributions and include time in the MDP state.
 %
 As well as synthesising robot behaviour, we also wish to accurately predict the execution-time performance of the multi-robot system.
 %
-To predict performance, we require accurate models of robot policy
-execution under congestion.
+To predict performance, we require accurate models of robot policy execution under congestion.
 %
 After planning, the PRT stores a CTMC for each robot that describes the continuous-time behaviour induced by their policy.
 %
@@ -98,7 +99,7 @@ We then predict execution-time robot performance by using formal verification te
 %
 These techniques could be used in CONVINCE to identify unexpected robot failures or delays during execution, and trigger replanning when necessary.
 %
-Alternatively, by predicting robot behaviour prior to execution, we can identify when and where contingency plans are likely to be required.
+Alternatively, by predicting robot behaviour prior to execution, we can identify when and where contingency plans are likely to be required.\looseness=-1
 
 
 \end{enumerate}
