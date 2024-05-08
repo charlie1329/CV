@@ -2,7 +2,7 @@
 \usepackage{fullpage}
 \usepackage{times}
 
-\title{Research Statement\\ \large \emph{Robotic Systems with a Guaranteed Quality of Service}}
+\title{Research Statement\\ \large \emph{Robotic Systems with a Guaranteed Quality of Service under Uncertainty}}
 \date{}
 \author{}
 
@@ -10,20 +10,55 @@
 \maketitle
 \thispagestyle{empty}
 
-As robots became prevalent in society, there is a growing need for safe, reliable autonomy.
+As robots become more prevalent in healthcare, manufacturing, and on our roads, there is a growing need for safe and reliable autonomy.
 %
-An end goal for this is to develop performant robots which achieve a \emph{guaranteed quality of service}, e.g. the robot successfully achieves its task $99\%$ of the time.
+Safety and reliability can be quantified through \emph{formal guarantees}, i.e. specifications the robot will always satisfy.
 %
-Existing robotic deployments are often limited to controlled environments.
+For example, an autonomous vehicle may guarantee that road rules are violated in less than $1\%$ of its operation time.
 %
-Real-world environments are often much more unpredictable and \emph{uncertain}, and the stochastic dynamics in these environments have a significant effect on robots acting within them.
+To obtain robust guarantees, robots require accurate \emph{models} of the environment, and how its actions affect it.
 %
-To be performant in these environments, robots require accurate models of the environment and  efficient decsion-making techniques.
+Existing robot deployments often assume limited, controlled environments which admit simplistic, deterministic models.
 %
-However, a model is never truly accurate, and so robots should be embodied with knowledge of how accurate their models are to improve performance.
+However, real world environments are stochastic, with numerous sources of uncertainty which affects the outcome of robot actions, their duration, and the robot's ability to observe its surroundings.
 %
-Developing techniques for efficient robot decision-making with a guaranteed quality of service requires a cross-disciplinary approach, combing techniques from AI, robotics, and formal verification.
+Identifying relevant sources of uncertainty for a problem is challenging, and introduces trade offs between accuracy and the scalability of formally verifying the system.
 
-My goal is to develop robotic systems with quality of service guarantees, i.e. robots which learn accurate environment models which are improved over their deployment; use these models to support efficient decision-making; and provide formal guarantees over this behaviour to demonstrate the reliability of the system.
+
+% NEW PARAGRAPH
+
+Formal guarantees should coincide with efficient robot behaviour.
+%
+If a robot performs poorly, guarantees have little use, as there is little benefit in deploying the robot.
+%
+Therefore, we require decision-making techniques which synthesise robot behaviour that satisfies a given guarantee or specification.
+%
+Similar to verification, decision-making techniques rely on accurate models.
+%
+If a model is inaccurate, our expectations of robot behaviour during decision-making diverge from what we observe during execution, limiting performance.
+
+% NEW PARAGRAPH
+
+Any decision-making or verification model will contain inaccuracies.
+%
+Therefore, robots should be embodied with techniques to reason over the epistemic uncertainty in their models: how much do they know, and how certain are they of it?
+%
+With this, robots may choose to explore to improve their model, and guarantees may provide bounds given model uncertainty.
+
+% BIG SEARCH AND RESCUE EXAMPLE
+
+% SUMMARISE THE PROBLEM THAT WE WANT TO ACHIEVE
+
+My research goal is to develop robotic systems which provide a guaranteed quality of service under uncertainty.
+%
+This requires robots which can i) learn accurate models of their environment and improve them over time; ii) use these models to synthesise efficient behaviour; and iii) provide formal guarantees over this behaviour.
+%
+This research is inherently cross-disciplinary, combining techniques from the AI, robotics, and formal verification communities.
+
+% ONE PARAGRAPH ABOUT RELATED WORK, TAKE A LOT OF THIS FROM MY SURVEY PAPER WHERE POSSIBLE
+
+
+
+
 
 \end{document}
