@@ -47,6 +47,28 @@ With this, robots may choose to explore to improve their model, and guarantees m
 
 % BIG SEARCH AND RESCUE EXAMPLE
 
+As an example, consider a heterogeneous team of rugged wheeled robots and drones in a search and rescue scenario.
+%
+Here, drones must identify human survivors who are then retrieved by the wheeled robots.
+%
+This is a safety critical scenario with obvious desired properties, e.g. $99\%$ of survivors are rescued unharmed.
+%
+This domain has numerous sources of uncertainty.
+%
+Smoke blown by the wind may restrict a drone's visibility.
+%
+The spread of fire or rubble may affect a wheeled robot's ability to navigate.
+%
+Broken power lines may affect robot communication.
+%
+Finally, the robots affect each other, e.g. if two wheeled robots navigate near each other, they may slow each other down.
+%
+To solve this problem, we require models which capture spatial uncertainty, temporal uncertainty, and partial observability.
+%
+The complexity of these models requires novel coordination solutions; simultaneous verification and decision-making is significantly more complex than standard decision-making.
+
+SOMETHING ABOUT MODEL UNCERTAINTY IN THIS EXAMPLE
+
 % SUMMARISE THE PROBLEM THAT WE WANT TO ACHIEVE
 
 My research goal is to develop robotic systems which provide a guaranteed quality of service under uncertainty.
