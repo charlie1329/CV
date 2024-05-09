@@ -9,6 +9,7 @@
 \begin{document}
 \maketitle
 \thispagestyle{empty}
+\pagenumbering{gobble}
 
 As robots become more prevalent in healthcare, manufacturing, and on our roads, there is a growing need for safe and reliable autonomy.
 %
@@ -76,10 +77,53 @@ My research goal is to develop robotic systems which provide a guaranteed qualit
 This requires robots which can i) learn accurate models of their environment and improve them over time; ii) use these models to synthesise efficient behaviour; and iii) provide formal guarantees over this behaviour.
 %
 This research is inherently cross-disciplinary, combining techniques from the AI, robotics, and formal verification communities.
+%
 
-% ONE PARAGRAPH ABOUT RELATED WORK, TAKE A LOT OF THIS FROM MY SURVEY PAPER WHERE POSSIBLE
 
+Research within the AI, robotics, and formal methods communities have begun to address components of the quality of service problem.
+%
+There have been numerous strands of work on robotic modelling which capture different forms of uncertainty.
+%
+These models inherently trade off between how accurately we capture uncertainty, and how tractably these models can be solved and verified.
+%
+Treading this line often involves making smart simplifying assumptions about the problem at hand, such as limiting where certain sources of uncertainty may occur.
+%
+There is a gap between state-of-the-art modelling techniques, and the current ability of simultaneous verification and decision-making techniques, which are often limited to only consider action outcome uncertainty.
+%
+This is partially due to a lack of scalability: richer forms of uncertainty are more complex to model, and combined decision-making and verification algorithms scale poorly with model complexity.
+%
+Moreover, all of the aforementioned problems are amplified as we start to consider fleets of robots and  model uncertainty.
 
+My interest in quality of service guarantees for robotic systems began during my PhD.
+%
+My thesis presented multiple techniques for multi-robot coordination under temporal uncertainty, with a focus on modelling and decision-making.
+%
+In one piece of work, presented in the IEEE transactions on robotics\footnote{Street, C., Pütz, S., Mühlig, M., Hawes, N. and Lacerda, B., 2022. Congestion-aware policy synthesis for multirobot systems. IEEE Transactions on Robotics, 38(1), pp.262-280.} I constructed temporal models which capture how robots affect each others' navigation performance when they operate in the same area simultaneously.
+%
+This allowed us to plan for multiple robots under congestion, i.e. one robot may take a longer but less congested route as it is lkely to reach its goal quicker.
+%
+In work presented in the journal of artificial intelligence research\footnote{Street, C., Lacerda, B., Mühlig, M. and Hawes, N., 2024. Right Place, Right Time: Proactive Multi-Robot Task Allocation Under Spatiotemporal Uncertainty. Journal of Artificial Intelligence Research, 79, pp.137-171.}, I developed temporal models which capture when and where robots will be required for tasks.
+%
+This was used to admit proactive decision-making, where robots predict when and where they are needed, and arrive there early.
+%
+These kinds of modelling and decision-making techniques are crucial for developing performant robots with a guaranteed quality of service.
+%
+Though the above techniques do not provide guarantees, model checking techniques are core to their success.
+%
+By model checking our temporal models, we can provide accurate predictions to support decision-making.
+%
+Following my PhD, I summarised the state-of-the-art in multi-robot modelling under uncertainty for the community into a survey article in Springer's current robotics reports\footnote{Street, C., Mansouri, M. and Lacerda, B., 2023. Formal Modelling for Multi-Robot Systems Under Uncertainty. Current Robotics Reports, 4(3), pp.55-64.}, and gave a half day tutorial in the international conference on autonomous agents and multi-agent systems.
+% Talk about my PhD work and how it's been disseminated (tutorial here!)
+
+% Talk about applications of this work (Lincoln, Accenture)
+
+% Something about CONVINCE
+
+% Where I go next
+
+% Having things working on real robot systems
+
+% Why UoB?
 
 
 
