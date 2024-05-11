@@ -70,37 +70,35 @@ With this, robots may choose to explore to improve their model, and guarantees m
 \fi
 
 % BIG SEARCH AND RESCUE EXAMPLE
-
-As an example, consider a heterogeneous team of rugged wheeled robots and drones in a search and rescue scenario.
+As an example, consider a heterogeneous fleet of wheeled robots and drones in a search and rescue scenario.
 %
-Here, drones must identify human survivors who are then retrieved by the wheeled robots.
+Drones must identify human survivors who are retrieved by wheeled robots.
 %
-This is a safety critical scenario with obvious desired properties, e.g. $99\%$ of survivors are rescued unharmed.
+The fleet designer wants to guarantee that over $99\%$ of survivors are rescued unharmed.
 %
-This domain has numerous sources of uncertainty.
+This domain has many complex sources of uncertainty which are challenging to model.
 %
-Smoke blown by the wind may restrict a drone's visibility.
+For example, smoke may surround a drone, limiting its sensing.
 %
-The spread of fire or rubble may affect a wheeled robot's ability to navigate.
+Moreover, the spread of fire may affect a wheeled robot's navigation, and broken power lines may limit robot communication. 
 %
-Broken power lines may affect robot communication.
+Robot interactions also contribute towards uncertainty, as wheeled robots operating in the same area may affect each other's navigation performance.
 %
-Finally, the robots affect each other, e.g. if two wheeled robots navigate near each other, they may slow each other down.
+To address this problem, we require robot models which capture the spatiotemporal dynamics of the environment under limited sensing.
 %
-To solve this problem, we require models which capture spatial uncertainty, temporal uncertainty, and partial observability.
+The complexity of these models necessitates novel coordination and verification solutions which exploit the structure of the problem.
 %
-The complexity of these models requires novel coordination solutions; simultaneous verification and decision-making is significantly more complex than standard decision-making.
-
-SOMETHING ABOUT MODEL UNCERTAINTY IN THIS EXAMPLE
+Further, obtaining such models is challenging, as search and rescue domains are unique, and robots have little opportunity to learn complex environmental dynamics prior to deployment.
+%
+Solution methods must acknowledge where model confidence is low to prevent potentially harmful robot decisions.
 
 % SUMMARISE THE PROBLEM THAT WE WANT TO ACHIEVE
 
-My research goal is to develop robotic systems which provide a guaranteed quality of service under uncertainty.
+My research goal is to develop robotic systems with a guaranteed quality of service under uncertainty.
 %
-This requires robots which can i) learn accurate models of their environment and improve them over time; ii) use these models to synthesise efficient behaviour; and iii) provide formal guarantees over this behaviour.
+This requires robots that i) learn accurate models of uncertainty which are improved over their lifetime; and ii) exploit these models to synthesise efficient behaviour that satisfies a formal specification.
 %
-This research is inherently cross-disciplinary, combining techniques from the AI, robotics, and formal verification communities.
-%
+This research is inherently cross-disciplinary, combining techniques from AI, robotics, and formal verification.
 
 
 Research within the AI, robotics, and formal methods communities have begun to address components of the quality of service problem.
