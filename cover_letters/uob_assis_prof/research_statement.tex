@@ -90,30 +90,31 @@ The complexity of these models necessitates novel coordination and verification 
 %
 Further, obtaining such models is challenging, as search and rescue domains are unique, and robots have little opportunity to learn complex environmental dynamics prior to deployment.
 %
-Solution methods must acknowledge where model confidence is low to prevent potentially harmful robot decisions.
+Solution methods must acknowledge where model confidence is low to prevent potentially harmful robot decisions.\looseness=-1
 
 % SUMMARISE THE PROBLEM THAT WE WANT TO ACHIEVE
 
-My research goal is to develop robotic systems with a guaranteed quality of service under uncertainty.
+My research goal is to develop \emph{robotic systems with a guaranteed quality of service under uncertainty}.
 %
 This requires robots that i) learn accurate models of uncertainty which are improved over their lifetime; and ii) exploit these models to synthesise efficient behaviour that satisfies a formal specification.
 %
 This research is inherently cross-disciplinary, combining techniques from AI, robotics, and formal verification.
 
+Existing research has addressed components of the quality of service problem.
+%
+There are numerous robotic modelling techniques for capturing action outcome uncertainty, temporal uncertainty, partial observability, and the effects of robot interactions.
+%
+These techniques trade between model accuracy and the scalability of corresponding solution methods.
+%
+This balance often requires making informed modelling assumptions, such as localising where certain sources of uncertainty occur.
+%
+Advancements in modelling are not reflected in combined verification and coordination techniques, which are often limited to deterministic models or action outcome uncertainty.
+%
+This is often for scalability reasons, as richer forms of uncertainty are complex to model, and solution methods scale poorly as the model size increases.
+%
+I aim to mitigate these issues through a \emph{holistic} approach for rich stochastic modelling, coordination, verification, and epistemic reasoning.
 
-Research within the AI, robotics, and formal methods communities have begun to address components of the quality of service problem.
-%
-There have been numerous strands of work on robotic modelling which capture different forms of uncertainty.
-%
-These models inherently trade off between how accurately we capture uncertainty, and how tractably these models can be solved and verified.
-%
-Treading this line often involves making smart simplifying assumptions about the problem at hand, such as limiting where certain sources of uncertainty may occur.
-%
-There is a gap between state-of-the-art modelling techniques, and the current ability of simultaneous verification and decision-making techniques, which are often limited to only consider action outcome uncertainty.
-%
-This is partially due to a lack of scalability: richer forms of uncertainty are more complex to model, and combined decision-making and verification algorithms scale poorly with model complexity.
-%
-Moreover, all of the aforementioned problems are amplified as we start to consider fleets of robots and  model uncertainty.
+
 
 My interest in quality of service guarantees for robotic systems began during my PhD.
 %
