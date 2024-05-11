@@ -11,11 +11,31 @@
 \thispagestyle{empty}
 \pagenumbering{gobble}
 
-As robots become more prevalent in healthcare, manufacturing, and on our roads, there is a growing need for safe and reliable autonomy.
+
+As robotic systems become prevalent in healthcare, manufacturing, and on our roads, there is a growing need for safe and reliable autonomy.
 %
-Safety and reliability can be quantified through \emph{formal guarantees}, i.e. specifications the robot will always satisfy.
+For this, we desire \emph{formal guarantees} over the behaviour of our system.
 %
-For example, an autonomous vehicle may guarantee that road rules are violated in less than $1\%$ of its operation time.
+For example, we may want to ensure that an autonomous vehicle only breaks road rules when there is danger to life.
+%
+Formal guarantees are often specified by the system designer in a temporal logic.
+%
+Robot behaviour should then be synthesised automatically to satisfy this specification.
+%
+This requires tight coupling between formal verification, and robot coordination and decision-making.
+%
+To obtain accurate guarantees and efficient behaviour, robots require models which capture the sources of \emph{uncertainty} that affect their behaviour in real-world environments.
+%
+Uncertainty affects the outcome and duration of robot actions, and a robot's ability to sense its surroundings.
+%
+If robot models are inaccurate, our expectations of behaviour during verification and coordination diverge from what we observe during execution, limiting task performance and weakening guarantees.
+%
+However, model inaccuracies are unavoidable due to limited data etc.
+%
+Therefore, robots must reason over the \emph{epistemic uncertainty} in their models to bound guarantees, and acquire knowledge through physical interactions with the environment.
+
+
+\iffalse
 %
 To obtain robust guarantees, robots require accurate \emph{models} of the environment, and how its actions affect it.
 %
@@ -38,6 +58,7 @@ Similar to verification, decision-making techniques rely on accurate models.
 %
 If a model is inaccurate, our expectations of robot behaviour during decision-making diverge from what we observe during execution, limiting performance.
 
+
 % NEW PARAGRAPH
 
 Any decision-making or verification model will contain inaccuracies.
@@ -45,6 +66,8 @@ Any decision-making or verification model will contain inaccuracies.
 Therefore, robots should be embodied with techniques to reason over the epistemic uncertainty in their models: how much do they know, and how certain are they of it?
 %
 With this, robots may choose to explore to improve their model, and guarantees may provide bounds given model uncertainty.
+
+\fi
 
 % BIG SEARCH AND RESCUE EXAMPLE
 
