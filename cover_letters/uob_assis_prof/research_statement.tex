@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage{fullpage}
 \usepackage{times}
 
@@ -115,72 +115,78 @@ This is often for scalability reasons, as richer forms of uncertainty are comple
 I aim to mitigate these issues through a \emph{holistic} approach for rich stochastic modelling, coordination, verification, and epistemic reasoning.
 
 
+My interest in robotic quality of service guarantees began during my PhD.
+%
+In my thesis, I presented multiple techniques for multi-robot modelling and coordination under temporal uncertainty.
+%
+For example, I proposed novel temporal models which capture how robots affect each other's navigation performance.
+%
+I used these models to plan for multiple robots under congestion, i.e. robots may take longer but less congested routes to reach their destination quicker\footnote{Street, C., Pütz, S., Mühlig, M., Hawes, N. and Lacerda, B., 2022. Congestion-Aware Policy Synthesis for Multirobot Systems. IEEE Transactions on Robotics, 38(1), pp.262-280.}.
+%
+In another line of work, I developed formal models which capture when and where robot tasks will appear.
+%
+This admits proactive decision-making, i.e. robots can predict when and where they're needed, and arrive early\footnote{Street, C., Lacerda, B., Mühlig, M. and Hawes, N., 2024. Right Place, Right Time: Proactive Multi-Robot Task Allocation Under Spatiotemporal Uncertainty. Journal of Artificial Intelligence Research, 79, pp.137-171.}.
+%
+Though these techniques do not provide guarantees, they rely on model checking techniques for probabilistic analysis to support decision-making.
+%
+In the 2023 International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS), I gave a half day tutorial on multi-robot planning under uncertainty.
+%
+This covered the sources of uncertainty which affect multi-robot systems, and how researchers can design coordination techniques to synthesise robust robot behaviour.
+%
+This was supported with a survey article published in Springer's Current Robotics Reports\footnote{Street, C., Mansouri, M. and Lacerda, B., 2023. Formal Modelling for Multi-Robot Systems Under Uncertainty. Current Robotics Reports, 4(3), pp.55-64.}.
 
-My interest in quality of service guarantees for robotic systems began during my PhD.
-%
-My thesis presented multiple techniques for multi-robot coordination under temporal uncertainty, with a focus on modelling and decision-making.
-%
-In one piece of work, presented in the IEEE transactions on robotics\footnote{Street, C., Pütz, S., Mühlig, M., Hawes, N. and Lacerda, B., 2022. Congestion-aware policy synthesis for multirobot systems. IEEE Transactions on Robotics, 38(1), pp.262-280.} I constructed temporal models which capture how robots affect each others' navigation performance when they operate in the same area simultaneously.
-%
-This allowed us to plan for multiple robots under congestion, i.e. one robot may take a longer but less congested route as it is lkely to reach its goal quicker.
-%
-In work presented in the journal of artificial intelligence research\footnote{Street, C., Lacerda, B., Mühlig, M. and Hawes, N., 2024. Right Place, Right Time: Proactive Multi-Robot Task Allocation Under Spatiotemporal Uncertainty. Journal of Artificial Intelligence Research, 79, pp.137-171.}, I developed temporal models which capture when and where robots will be required for tasks.
-%
-This was used to admit proactive decision-making, where robots predict when and where they are needed, and arrive there early.
-%
-These kinds of modelling and decision-making techniques are crucial for developing performant robots with a guaranteed quality of service.
-%
-Though the above techniques do not provide guarantees, model checking techniques are core to their success.
-%
-By model checking our temporal models, we can provide accurate predictions to support decision-making.
-%
-Following my PhD, I summarised the state-of-the-art in multi-robot modelling under uncertainty for the community into a survey article in Springer's current robotics reports\footnote{Street, C., Mansouri, M. and Lacerda, B., 2023. Formal Modelling for Multi-Robot Systems Under Uncertainty. Current Robotics Reports, 4(3), pp.55-64.}, and gave a half day tutorial in the international conference on autonomous agents and multi-agent systems.
 
 % Talk about applications of this work (Lincoln, Accenture)
 
-The practical benefits of my PhD work have been demonstrated through external collaborations.
+The utility of my formal approach to robotics has been demonstrated through external collaborations.
 %
-I've worked with the university of Lincoln\footnote{https://lcas.lincoln.ac.uk/wp/} on deploying my congestion-aware multi-robot planner onto agricultural robots aiding human fruit pickers.
+I've worked alongside the University of Lincoln to deploy planning techniques developed during my PhD onto agricultural robots operating in fruit fields.
 %
-This proposes interesting challenges for robot decision-making, as robots are constrained to narrow aisles in the fields.
+Fruit fields constrain robot movement, which would make it challenging to obtain effective quality of service guarantees, as one poor decision may cause a robot to traverse large parts of the field.
 %
-I've also worked with Accenture Lab\footnote{https://www.accenture.com/gb-en/about/accenture-labs-index} on applying multi-agent modelling techniques developed during my PhD\footnote{Street, C., Lacerda, B., Staniaszek, M., Mühlig, M. and Hawes, N., 2022. Context-aware modelling for multi-robot systems under uncertainty.} on order picking systems in warehouses.
+I've also worked with Accenture Labs to apply formal multi-agent modelling techniques to evaluate order picking systems in warehouses.
 %
-The aim was to utilise my models to evaluate the effects of congestion between robots and humans on KPIs such as throughput in warehouses.
+Order picking systems can contain tens to hundreds of agents.
 %
-My models capture congestion more precisely than existing approaches, and revealed key insights into when robotic systems are useful for businesses, and how many should be purchased\footnote{Street, C., Jujjavarapu, S.S., Chen, M.N.A., Paul, S. and Hawes, N., 2023, July. Analysing the Effects of Congestion on Hybrid Order Picking Systems Using a Discrete-Event Simulator. In International Conference on Intelligent Autonomous Systems (pp. 393-404). Cham: Springer Nature Switzerland.}.
+This work highlighted the role of sampling-based statistical model checking techniques for verifying robotic systems at scale, and will impact my future research.
+%
+%The aim was to utilise my models to evaluate the effects of congestion between robots and humans on KPIs such as throughput in warehouses.
+%
+%My models capture congestion more precisely than existing approaches, and revealed key insights into when robotic systems are useful for businesses, and how many should be purchased.
+%
+External collaborations reveal interesting and novel research questions, and I will initiate new collaborations during my time in the school of computer science.
+
+
 
 % Something about CONVINCE
-
-My research goals have broadened during my recent work on EU horizon project CONVINCE\footnote{https://convince-project.eu/}.
+My research interests have broadened through my work on EU Horizon project CONVINCE.
 %
-The aim of CONVINCE is to develop a fully verifiable toolchain for robotic systems.
+CONVINCE is developing a fully verificable toolchain for robotic systems.
 %
-My role within CONVINCE involves robot planning in dynamic and uncertain environments
+Though my focus is on robot planning in dynamic and uncertain environments, I work closely with those focused on formal verification.
 %
-In one line of research, I explored techniques for robots to efficiently cover environments given no prior knowledge of its dynamics.
+It was in CONVINCE I discovered the importance of epistemic reasoning.
 %
-Here, the robot should learn the dynamics over its lifetime, and reason over how much it knows about its environment.
+For example, I've investigated techniques for robot area coverage given no prior information of the environment.
 %
-An alternate line of research investigates behaviour trees, a popular software formalism for defining robot behaviour.
+Here, the robot must learn the environment dynamics over its lifetime, and reason over its knowledge of these dynamics.
 %
-These are often designed in an ad-hoc manner, without formal guarantees or any consideration of uncertainty.
+In another line of work I've explored behaviour trees, a popular formalism for describing robot behaviour.
 %
-I have developed planning techniques which refine existing behaviour trees to attain robustness under uncertainty.
+These are often designed by humans without considering uncertainty, and provide no formal guarantees.
 %
-Such techniques also provide the groundwork for introducing model checking methods to achieve formal guarantees.
+I have developed techniques for refining behaviour trees to attain robustness under uncertainty which are transferrable to formal verification.
+%
+This provides a different perspective on the guaranteed quality of service problem, and I look forward to extending this research at the University of Birmingham.
 
 % Having things working on real robot systems
-
-I believe strongly in the important of testing and evaluating robotic technologies on physical systems to solve real-world problems.
+I believe in a practical approach to robotics research.
 %
-This has been demonstrated through my work with external collaborators, and time spent leading Oxford's RoboCup team.
+The benefits of any technique for cyber-physical systems are not fully understood until they have been deployed on hardware to solve a real-world problem.
 %
-I argue that the benefit of any methodology for cyber-physical systems isn't truly understood until it has been deployed on hardware.
+This brings many practical challenges, but is essential for effective dissemination across the robotics community.
 %
-Real-world deployments provide a unique set of problems which often feedback into the research process.
-%
-This focus on hardware will form a core philosophy of my future research, and the resources within the school of computer science will enable this.
+Moreover, hardware deployments often highlight interesting, undiscovered problems which feed back into the research process.
 
 % Where I go next & Why UoB?
 
