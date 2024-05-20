@@ -1,0 +1,215 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+
+\title{Research Statement\\ \large \emph{Robotic Systems with a Guaranteed Quality of Service under Uncertainty}}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\pagenumbering{gobble}
+
+
+As robotic systems become more prevalent in healthcare, manufacturing, and on our roads, there is a growing need for safe and reliable autonomy.
+%
+For this, we desire \emph{formal guarantees} over the behaviour of our system.
+%
+For example, we may want to ensure that an autonomous vehicle only breaks road rules when there is danger to life.
+%
+Formal guarantees are often specified by the system designer in a temporal logic.
+%
+Robot behaviour should then be synthesised automatically to satisfy this specification.
+%
+This requires tight coupling between formal verification, and robot coordination and decision-making.
+%
+To obtain accurate guarantees and efficient behaviour, robots require models which capture the sources of \emph{uncertainty} that affect their behaviour in real-world environments.
+%
+Uncertainty affects the outcome and duration of robot actions, and a robot's ability to sense its surroundings.
+%
+If robot models are inaccurate, our expectations of behaviour during verification and coordination diverge from what we observe during execution, limiting task performance and weakening guarantees.
+%
+However, model inaccuracies are unavoidable due to limited data etc.
+%
+Therefore, robots must reason over the \emph{epistemic uncertainty} in their models to bound guarantees, and acquire knowledge through physical interactions with the environment.
+
+
+\iffalse
+%
+To obtain robust guarantees, robots require accurate \emph{models} of the environment, and how its actions affect it.
+%
+Existing robot deployments often assume limited, controlled environments which admit simplistic, deterministic models.
+%
+However, real world environments are stochastic, with numerous sources of uncertainty which affects the outcome of robot actions, their duration, and the robot's ability to observe its surroundings.
+%
+Identifying relevant sources of uncertainty for a problem is challenging, and introduces trade offs between accuracy and the scalability of formally verifying the system.
+
+
+% NEW PARAGRAPH
+
+Formal guarantees should coincide with efficient robot behaviour.
+%
+If a robot performs poorly, guarantees have little use, as there is little benefit in deploying the robot.
+%
+Therefore, we require decision-making techniques which synthesise robot behaviour that satisfies a given guarantee or specification.
+%
+Similar to verification, decision-making techniques rely on accurate models.
+%
+If a model is inaccurate, our expectations of robot behaviour during decision-making diverge from what we observe during execution, limiting performance.
+
+
+% NEW PARAGRAPH
+
+Any decision-making or verification model will contain inaccuracies.
+%
+Therefore, robots should be embodied with techniques to reason over the epistemic uncertainty in their models: how much do they know, and how certain are they of it?
+%
+With this, robots may choose to explore to improve their model, and guarantees may provide bounds given model uncertainty.
+
+\fi
+
+% BIG SEARCH AND RESCUE EXAMPLE
+As an example, consider a heterogeneous fleet of wheeled robots and drones in a search and rescue scenario.
+%
+Drones must identify human survivors who are retrieved by wheeled robots.
+%
+The fleet designer wants to guarantee that over $99\%$ of survivors are rescued unharmed.
+%
+This domain has many complex sources of uncertainty which are challenging to model.
+%
+For example, smoke may surround a drone, limiting its sensing.
+%
+The spread of fire may affect a wheeled robot's navigation, and broken power lines may limit robot communication. 
+%
+Robot interactions also contribute towards uncertainty, as wheeled robots operating in the same area may affect each other's navigation performance.
+%
+To address this problem, we require robot models which capture the spatiotemporal dynamics of the environment under limited sensing.
+%
+The complexity of these models necessitates novel coordination and verification solutions which exploit the structure of the problem.
+%
+Further, obtaining such models is challenging, as search and rescue domains are unique, and robots have little opportunity to learn complex environmental dynamics prior to deployment.
+%
+Solution methods must acknowledge where model confidence is low to prevent potentially harmful robot decisions.\looseness=-1
+
+% SUMMARISE THE PROBLEM THAT WE WANT TO ACHIEVE
+
+My research goal is to develop \emph{robotic systems with a guaranteed quality of service under uncertainty}.
+%
+This requires robots that i) learn accurate models of uncertainty which are improved over their lifetime; and ii) exploit these models to synthesise efficient behaviour that satisfies a formal specification.
+%
+This research is inherently cross-disciplinary, combining techniques from AI, robotics, and formal verification.
+
+Existing research has addressed components of the quality of service problem.
+%
+There are numerous robotic modelling techniques for capturing action outcome uncertainty, temporal uncertainty, partial observability, and the effects of robot interactions.
+%
+These techniques trade between model accuracy and the scalability of corresponding solution methods.
+%
+This balance often requires making informed modelling assumptions, such as localising where certain sources of uncertainty occur.
+%
+Advancements in modelling are not reflected in combined verification and coordination techniques, which are often limited to deterministic models or action outcome uncertainty.
+%
+This is often for scalability reasons, as richer forms of uncertainty are complex to model, and solution methods scale poorly as the model size increases.
+%
+I aim to mitigate these issues through a \emph{holistic} approach for rich stochastic modelling, coordination, verification, and epistemic reasoning.
+
+
+My interest in robotic quality of service guarantees began during my PhD.
+%
+In my thesis, I presented multiple techniques for multi-robot modelling and coordination under temporal uncertainty.
+%
+For example, I proposed novel temporal models which capture how robots affect each other's navigation performance.
+%
+I used these models to plan for multiple robots under congestion, i.e. robots may take longer but less congested routes to reach their destination quicker\footnote{Street, C., Pütz, S., Mühlig, M., Hawes, N. and Lacerda, B., 2022. Congestion-Aware Policy Synthesis for Multirobot Systems. IEEE Transactions on Robotics, 38(1), pp.262-280.}.
+%
+In another line of work, I developed formal models which capture when and where robot tasks will appear.
+%
+This admits proactive decision-making, i.e. robots can predict when and where they're needed, and arrive early\footnote{Street, C., Lacerda, B., Mühlig, M. and Hawes, N., 2024. Right Place, Right Time: Proactive Multi-Robot Task Allocation Under Spatiotemporal Uncertainty. Journal of Artificial Intelligence Research, 79, pp.137-171.}.
+%
+Though these techniques do not provide guarantees, they rely on model checking techniques for probabilistic analysis to support decision-making.
+%
+In the 2023 International Conference on Autonomous Agents and Multi-Agent Systems (AAMAS), I gave a half day tutorial on multi-robot planning under uncertainty.
+%
+This covered the sources of uncertainty which affect multi-robot systems, and how researchers can design coordination techniques to synthesise robust robot behaviour.
+%
+This was supported with a survey article published in Springer's Current Robotics Reports\footnote{Street, C., Mansouri, M. and Lacerda, B., 2023. Formal Modelling for Multi-Robot Systems Under Uncertainty. Current Robotics Reports, 4(3), pp.55-64.}.
+
+
+% Talk about applications of this work (Lincoln, Accenture)
+
+The utility of my formal approach to robotics has been demonstrated through external collaborations.
+%
+I've worked alongside the University of Lincoln to deploy planning techniques developed during my PhD onto agricultural robots operating in fruit fields.
+%
+Fruit fields constrain robot movement, which would make it challenging to obtain effective quality of service guarantees, as one poor decision may cause a robot to traverse large parts of the field.
+%
+I've also worked with Accenture Labs to apply formal multi-agent modelling techniques to evaluate order picking systems in warehouses.
+%
+Order picking systems can contain tens to hundreds of agents.
+%
+This work highlighted the role of sampling-based statistical model checking techniques for verifying robotic systems at scale, and will impact my future research.
+%
+%The aim was to utilise my models to evaluate the effects of congestion between robots and humans on KPIs such as throughput in warehouses.
+%
+%My models capture congestion more precisely than existing approaches, and revealed key insights into when robotic systems are useful for businesses, and how many should be purchased.
+%
+External collaborations reveal interesting and novel research questions, and I will initiate new collaborations during my time in the school of computer science.
+
+
+
+% Something about CONVINCE
+My research interests have broadened through my work on EU Horizon project CONVINCE.
+%
+CONVINCE is developing a fully verifiable toolchain for robotic systems.
+%
+Though my focus is on robot planning in dynamic and uncertain environments, I work closely with those focused on formal verification.
+%
+It was in CONVINCE I became aware of the importance of epistemic reasoning.
+%
+For example, I've investigated techniques for robot area coverage given no prior information of the environment.
+%
+Here, the robot must learn the environment dynamics over its lifetime, and reason over its knowledge of these dynamics.
+%
+I've also explored behaviour trees, a popular formalism for describing robot behaviour.
+%
+These are often designed by humans without considering uncertainty, and provide no formal guarantees.
+%
+I have developed techniques for refining behaviour trees to attain robustness under uncertainty which are transferrable to formal verification.
+%
+This provides a different perspective on the guaranteed quality of service problem which I look forward to extending in the future.
+
+% Having things working on real robot systems
+I believe in a practical approach to robotics research.
+%
+The benefits of any technique for cyber-physical systems are not fully understood until they have been deployed on hardware to solve a real-world problem.
+%
+This brings many practical challenges, but is essential for effective dissemination across the robotics community.
+%
+Moreover, hardware deployments often highlight interesting, undiscovered problems which feed back into the research process.
+
+% Where I go next & Why UoB?
+
+
+In summary, my research has tackled robot modelling, coordination, and epistemic reasoning, which are fundamental to the quality of service problem.
+%
+Formal verification and model checking are core to this work, but have not been at the forefront.
+%
+I aim to address this by developing novel frameworks for guaranteed quality of service which can be deployed on physical robotic systems for safety and reliability.
+%
+This research brings numerous challenges, and the inter-disciplinary expertise in the school of computer science will provide an exicting environment to address them in.\looseness=-1
+
+\iffalse
+My existing work has opened multiple future strands of research.
+%
+How can we retain richer forms of uncertainty in our models while controlling their size?
+%
+How can we develop more scalable decision-making techniques which exploit rich models to synthesise efficient and robust robot behaviour?
+%
+Further to this, how can we simultaneously verify robot behaviour during decision-making on large, complex models in a tractable way?
+%
+How can we incorporate epistemic uncertainty into simultaneous decision-making and verification methods?
+%
+These questions require varied solutions, and the inter-disciplinary expertise in the school of computer science will provide a great environment to foster new collaborations to address these challenges.
+\fi
+\end{document}
