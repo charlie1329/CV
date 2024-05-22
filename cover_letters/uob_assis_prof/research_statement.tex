@@ -22,10 +22,9 @@ Mines are hostile environments with little light, dusty air, and falling debris.
 %
 Robots have a limited battery, and must travel to a central `mothership' to recharge.
 %
-If a robot dies within a mine, it is difficult to retrieve and in the worst case lost.
+If a robot dies within a mine, it is difficult to retrieve, and in the worst case lost.
 %
-For reliability, we want to \emph{guarantee} that the probability of a robot's battery dying during exploration is very low.
-
+For safety and reliability, we want to \emph{guarantee} that the probability of a robot's battery dying during exploration is very low.
 
 Mine exploration is a challenging robotic problem that requires state-of-the-art solutions.
 %
@@ -39,25 +38,23 @@ Formal verification methods rigorously analyse the evolution of the robots and e
 
 Decision-making and verification methods often rely on a \emph{formal model} which describes how robot actions impact the environment, and how the environment evolves.
 %
-If these models are inaccurate, our expectations of how the robots behave during verification and decision-making diverge from what we observe in the real world, limiting performance and weakening our guarantees. 
+The success of these methods correlates strongly with model accuracy.
 %
 To construct accurate models, we must capture the sources of \emph{uncertainty} which affect the robots.
 %
-Uncertainty affects the outcome and duration of robot actions, and a robot's ability to sense its surroundings.
+Uncertainty is highly prevalent during mine exploration.
 %
-There are many sources of uncertainty during mine exploration.
+For example, low light levels and dust may affect a robot's sensors, falling rocks may block parts of the mine, and robot communications may fail due to unexpected obstructions between robots.
 %
-First, low light levels and dust affect a robot's ability to sense its environment.
+Model construction is difficult, as robots have limited prior information about the mine.
 %
-Rock fall may occur during exploration, blocking access to possible uranium deposit locations.
+Therefore, robots must reason over the uncertainty in their model to avoid potentially harmful decisions, such as mistakingly entering a high radiation area.
+
+%If these models are inaccurate, our expectations of how the robots behave during verification and decision-making diverge from what we observe in the real world, limiting performance and weakening our guarantees. 
 %
-Robots must also communicate with each other and to humans outside the mine.
 %
-Communication within mines is fragile and easily fail due to obstructions between robots.
+%Uncertainty affects the outcome and duration of robot actions, and a robot's ability to sense its surroundings.
 %
-It is challenging to obtain accurate models of these rich sources of uncertainty, as all mines are different, and robots will have limited information to build these models from.
-%
-Therefore, robot models must also consider uncertainty over the model itself to prevent false confidence in the model from causing potentially harmful robot decisions.
 
 
 \vspace*{1ex}\noindent\textbf{Research Goal.} The above problem is a use case for an EU Horizon project proposal I recently co-authored.
