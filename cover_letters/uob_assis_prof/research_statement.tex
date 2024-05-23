@@ -88,40 +88,41 @@ I will address these issues through an \emph{holistic} approach to modelling unc
 
 In my first five years as assistant professor, I will investigate the following:
 
-\vspace*{1ex}\noindent\textbf{1) Simultaneous Robot Decision-Making and Verification under Rich Models of Uncertainty.} Existing decision-making and verification techniques are often limited to models of action outcome uncertainty.
+\vspace*{1ex}\noindent\textbf{1) Simultaneous Robot Decision-Making and Verification under Complex Models of Uncertainty.} 
 %
-This does not reflect real-world environments, where sources of uncertainty affect the duration of robot actions, and a robot's observations in the environment.
+Existing decision-making and verification techniques are often limited to robot models which capture uncertainty over action outcomes.
 %
-To address this, I will research new decision-making and verification techniques which are more applicable to realistic problems.
+This is not representative of real-world environments, where uncertainty also affects robot action durations and sensing.
 %
-My expertise in this area is demonstrated by my PhD research.
+To address this, I will establish novel techniques for decision-making and verification which handle more complex forms of uncertainty.
 %
-In my thesis, I presented multiple techniques for multi-robot modelling and decision-making under temporal uncertainty.
+I developed expertise on this topic during my PhD, where I presented a suite of techniques for multi-robot modelling and decision-making under temporal uncertainty.
 %
-I proposed novel temporal models which capture how robots affect each other's navigation performance.
+For example, I proposed novel temporal models which capture how robots affect each other's navigation performance.
 %
-I used these models for multi-robot decision-making under congestion, i.e. robots may take longer but less congested routes to reach their destination quicker~\cite{street2020multi,street2021congestion}.
+I used these models to support multi-robot decision-making under congestion, where robots may take longer but less congested routes to reach their destination faster~\cite{street2020multi,street2021congestion}.
 %
-I also developed formal models which capture when and where robot tasks will appear.
+I also developed formal models which capture when and where robots will be requested for tasks.
 %
-This admits proactive decision-making, i.e. robots can predict when and where they're needed, and arrive early~\cite{street2024right}.
+I exploited these models for proactive decision-making, where robots can predict when and where they're needed, and arrive there early~\cite{street2024right}.
 %
-Both of these approaches rely on formal verification techniques for probabilistic analysis to support decision-making.
+Both of these approaches utilise formal verification techniques to support decision-making, and provide an ideal entry point for research on simultaneous decision-making and verification.
 
-\vspace*{1ex}\noindent\textbf{2) Improving Quality of Service Guarantees through Model Learning.} Formal guarantees are only as good as the model used for verification.
+\vspace*{1ex}\noindent\textbf{2) Improving Quality of Service Guarantees through Model Learning.}
 %
-In many real-world problems, robots will not have an accurate model of the environment at the start of their deployment.
+Formal guarantees are only useful if the verification model is representative of the real environment.
 %
-Therefore, robots should learn and improve their model during execution, and use this to strengthen guarantees.
+In many problems such as mine exploration, it is challenging for robots to obtain accurate models prior to deployment.
 %
-I have recently investigated techniques for robot decision-making under uncertainty where the robot has no prior knowledge of the environment.
+Robots should therefore learn and improve their model during execution, and use this to strengthen guarantees.
 %
-Here, the robot repeats its task periodically, and uses its observations during each run to improve its model.
+I've acquired model learning expertise from recent work on decision-making under uncertainty where the robot has no prior knowledge of its environment.
 %
-Model improvements were reflected in increased decision-making performance.
+Here, the robot repeats a task periodically, and uses its observations during each run for model learning.
 %
-This insight suggests the same philosophy can be applied to formal verification techniques.
-
+This gradual approach to model learning was shown to increase decision-making performance.
+%
+I believe a similar philosophy can be applied to formal verification techniques to iteratively improve quality of service guarantees.
 
 \vspace*{1ex}\noindent\hypertarget{topicthree}{\textbf{3) Anytime Algorithms for Simultaneous Decision-Making and Verification.}} As discussed above, simultaneous decision-making and verification techniques scale poorly as model size increases.
 %
