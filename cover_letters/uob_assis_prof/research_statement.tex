@@ -5,6 +5,9 @@
 
 \newcommand{\anytime}{\hyperlink{topicthree}{\textbf{Anytime Algorithms for Simultaneous Decision-Making and Verification}}}
 
+\usepackage[style=ieee, backend=bibtex]{biblatex}
+\addbibresource{../../references.bib}
+
 \title{Research Statement\\ \large \emph{Robotic Systems with a Guaranteed Quality of Service under Uncertainty}}
 \date{}
 \author{}
@@ -85,11 +88,58 @@ I will address these issues through an \emph{holistic} approach to modelling unc
 
 In my first five years as assistant professor, I will investigate the following:
 
-\vspace*{1ex}\noindent\textbf{1) Guaranteed Robotic Systems under Rich Models of Spatiotemporal Uncertainty.}
+\vspace*{1ex}\noindent\textbf{1) Simultaneous Robot Decision-Making and Verification under Rich Models of Uncertainty.} Existing decision-making and verification techniques are often limited to models of action outcome uncertainty.
+%
+This does not reflect real-world environments, where sources of uncertainty affect the duration of robot actions, and a robot's observations in the environment.
+%
+To address this, I will research new decision-making and verification techniques which are more applicable to realistic problems.
+%
+My expertise in this area is demonstrated by my PhD research.
+%
+In my thesis, I presented multiple techniques for multi-robot modelling and decision-making under temporal uncertainty.
+%
+I proposed novel temporal models which capture how robots affect each other's navigation performance.
+%
+I used these models for multi-robot decision-making under congestion, i.e. robots may take longer but less congested routes to reach their destination quicker~\cite{street2020multi,street2021congestion}.
+%
+I also developed formal models which capture when and where robot tasks will appear.
+%
+This admits proactive decision-making, i.e. robots can predict when and where they're needed, and arrive early~\cite{street2024right}.
+%
+Both of these approaches rely on formal verification techniques for probabilistic analysis to support decision-making.
 
-\vspace*{1ex}\noindent\textbf{2) Guarantees which Improve with the Model.}
+\vspace*{1ex}\noindent\textbf{2) Improving Quality of Service Guarantees through Model Learning.} Formal guarantees are only as good as the model used for verification.
+%
+In many real-world problems, robots will not have an accurate model of the environment at the start of their deployment.
+%
+Therefore, robots should learn and improve their model during execution, and use this to strengthen guarantees.
+%
+I have recently investigated techniques for robot decision-making under uncertainty where the robot has no prior knowledge of the environment.
+%
+Here, the robot repeats its task periodically, and uses its observations during each run to improve its model.
+%
+Model improvements were reflected in increased decision-making performance.
+%
+This insight suggests the same philosophy can be applied to formal verification techniques.
 
-\vspace*{1ex}\noindent\hypertarget{topicthree}{\textbf{3) Anytime Algorithms for Simultaneous Decision-Making and Verification.}}
+
+\vspace*{1ex}\noindent\hypertarget{topicthree}{\textbf{3) Anytime Algorithms for Simultaneous Decision-Making and Verification.}} As discussed above, simultaneous decision-making and verification techniques scale poorly as model size increases.
+%
+This becomes especially challenging when robots receive new tasks during execution, limiting the time for decision-making and verification.
+%
+To mitigate these scalability issues, I will develop anytime algorithms for simultaneous decision-making and verification.
+%
+As these algorithms run for longer, decsion-making performance will improve, and guarantees will strengthen.
+%
+I have a strong expertise in anytime decision-making methods, which have appeared frequently during my research career.
+%
+During my PhD, I used anytime algorithms for multi-robot decision making under rich temporal models of congestion~\cite{street2020multi,street2021congestion}.
+%
+Recently, I applied a state-of-the-art anytime algorithm for decision-making under spatiotemporal uncertainty where the robot can only partially sense its environment.
+%
+Anytime decision-making algorithms share a similar philosophy with statistical, sampling-based verification methods.
+%
+My initial approach to this work will investigate how these approaches can be combined in a principled way.
 
 \vspace*{1ex}\noindent\textbf{Research Philosophy.} I believe in a \emph{practical approach} to robotics research.
 %
@@ -107,7 +157,7 @@ To highlight the current challenges in my field, I ran a half day tutorial on mu
 %
 Here, I covered the sources of uncertainty which affect multi-robot systems, and discussed how researchers can design decision-making techniques to make robots robust to these effects.
 %
-This was supported with a survey article published in \emph{Springer's Current Robotics Reports}\footnote{Street, C., Mansouri, M. and Lacerda, B., 2023. Formal Modelling for Multi-Robot Systems Under Uncertainty. Current Robotics Reports, 4(3), pp.55-64.}.\looseness=-1
+This was supported with a survey article published in \emph{Springer's Current Robotics Reports}~\cite{street2023formal}.\looseness=-1
 
 \vspace*{1ex}\noindent\textbf{Collaborations.} The strength of my PhD research spawned two external collaborations.
 %
@@ -115,8 +165,7 @@ I worked with the University of Lincoln on the First Fleet project to deploy mul
 %
 Fruit fields constrain robot movement, introducing interesting challenges for the guaranteed quality of service problem, as one poor decision may cause a robot to traverse large parts of the field.
 %
-I also led a collaboration with Accenture Labs to apply my novel multi-agent modelling formalisms\footnote{Street, C., Lacerda, B., Staniaszek, M., Mühlig, M. and Hawes, N., 2022. Context-Aware Modelling for Multi-Robot Systems Under Uncertainty. In Proceedings of the International Conference on Autonomous Agents
-and Multiagent Systems (AAMAS).} to evaluate human-robot teams in warehouses.
+I also led a collaboration with Accenture Labs to apply my novel multi-agent modelling formalisms to evaluate human-robot teams in warehouses~\cite{street2022context,street2023analysing}.
 %
 Warehouses often contain tens to hundreds of agents.
 %
@@ -149,5 +198,7 @@ Formal verification and model checking have been at the core of my work but neve
 As outlined in this statement, I will address this by developing novel frameworks for guaranteed quality of service which can be deployed on physical robotic systems for safety and reliability.
 %
 This research brings numerous challenges, and the inter-disciplinary expertise in the school of computer science will provide an exicting environment to address them in.
+
+\printbibliography
 
 \end{document}
