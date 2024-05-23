@@ -27,11 +27,11 @@ Robots have a limited battery, and must travel to a central `mothership' to rech
 %
 If a robot dies within a mine, it is difficult to retrieve, and in the worst case lost.
 %
-For safety and reliability, we want to \emph{guarantee} that the probability of a robot's battery dying during exploration is very low.
+For safety and reliability we want to \emph{guarantee} that the probability of a robot's battery dying during exploration is very low.
 
 Mine exploration is a challenging robotic problem that requires state-of-the-art solutions.
 %
-To efficiently explore the mine and identify uranium deposits we require automatic \emph{decision-making} techniques which inform the robots how to act during execution.
+To efficiently explore the mine and identify uranium deposits we require automatic \emph{decision-making} techniques which determine how the robots should act during execution.
 %
 The results of decision-making will dictate where robots should map, and where to take rock samples.
 %
@@ -82,7 +82,7 @@ Advancements in modelling are not reflected in simultaneous verification and dec
 %
 This is often for scalability reasons, as richer forms of uncertainty are complex to model, and solution methods scale poorly as the model size increases.
 %
-I will address these issues through an \emph{holistic} approach to modelling uncertainty, decision-making, and verification.
+I will address these issues through an \emph{holistic} approach to decision-making, verification, and modelling uncertainty.
 
 \section*{Research Plan}
 
@@ -112,7 +112,7 @@ Both of these approaches utilise formal verification techniques to support decis
 %
 Formal guarantees are only useful if the verification model is representative of the real environment.
 %
-In many problems such as mine exploration, it is challenging for robots to obtain accurate models prior to deployment.
+In many problems, such as mine exploration, it is challenging for robots to obtain accurate models prior to deployment.
 %
 Robots should therefore learn and improve their model during execution, and use this to strengthen guarantees.
 %
